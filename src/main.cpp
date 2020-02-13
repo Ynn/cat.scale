@@ -17,6 +17,10 @@
 #define A 0.00257916
 #define B 18614
 
+IPAddress ip( 192, 168, 1, 201 );
+IPAddress gateway( 192, 168, 1, 1 );
+IPAddress subnet( 255, 255, 255, 0 );
+
 WiFiClient espClient;
 PubSubClient client(espClient);
 
@@ -45,6 +49,7 @@ void setup_wifi() {
 
   // Bring up the WiFi connection
   WiFi.mode( WIFI_STA );
+  WiFi.config( ip, gateway, subnet );
   WiFi.begin(wifi_ssid, wifi_password);
 
   while (WiFi.status() != WL_CONNECTED) {
