@@ -38,6 +38,11 @@ void setup_wifi() {
   WiFi.forceSleepWake();
   delay( 1 );
 
+
+  // Disable the WiFi persistence.  The ESP8266 will not load and save WiFi settings in the flash memory.
+  WiFi.persistent( false );
+
+
   // Bring up the WiFi connection
   WiFi.mode( WIFI_STA );
   WiFi.begin(wifi_ssid, wifi_password);
