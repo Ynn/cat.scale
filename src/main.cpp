@@ -82,15 +82,38 @@ void setup_wifi() {
     WiFi.begin(wifi_ssid, wifi_password);
   }
 
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    // Serial.print(".");
+
+  int retries = 0;
+  int wifiStatus = WiFi.status();
+  while( wifiStatus != WL_CONNECTED ) {
+    retries++;
+    if( retries == 100 ) {
+      // Quick connect is not working, reset WiFi and try regular connection
+      WiFi.disconnect();
+      delay( 10 );
+      WiFi.forceSleepBegin();
+      delay( 10 );
+      WiFi.forceSleepWake();
+      delay( 10 );
+      WiFi.begin( WLAN_SSID, WLAN_PASSWD );
+    }
+    if( retries == 600 ) {
+      // Giving up after 30 seconds and going back to sleep
+      WiFi.disconnect( true );
+      delay( 1 );
+      WiFi.mode( WIFI_OFF );
+      ESP.deepSleep( SLEEPTIME, WAKE_RF_DISABLED );
+      return; // Not expecting this to be called, the previous call will never return.
+    }
+    delay( 50 );
+    wifiStatus = WiFi.status();
   }
+
 
   // Serial.println("");
   // Serial.println("Wifi ok ");
   // Serial.print("=> IP : ");
-  Serial.print(WiFi.localIP());
+  // Serial.print(WiFi.localIP());
 }
 
 //Reconnexion
