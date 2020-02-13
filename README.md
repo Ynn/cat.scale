@@ -18,7 +18,7 @@
 + http://riton-duino.blogspot.com/2019/02/alimenter-un-arduino-sur-pile-ou.html
 + https://www.radioshuttle.de/fr/medias-fr/informations-techniques/esp32-alimente-par-batterie/
 + https://blog.voneicken.com/2018/lp-wifi-esp8266-1/
-
++ https://www.bakke.online/index.php/2017/06/24/esp8266-wifi-power-reduction-avoiding-network-scan/#more-376
 
 
 ## Modele 3D pile
