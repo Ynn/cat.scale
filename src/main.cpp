@@ -138,7 +138,7 @@ void setup() {
     ESP.deepSleepInstant(10*60*1000000, RF_DEFAULT);
   }else{
     //retry in one minute
-    ESP.deepSleepInstant(60*1000000, RF_DEFAULT);
+    ESP.deepSleepInstant(60*1000000, RF_DISABLED);
   }
 }
 
