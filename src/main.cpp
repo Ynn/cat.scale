@@ -35,6 +35,11 @@ void setup_wifi() {
   // Serial.print("Connect to");
   // Serial.println(wifi_ssid);
 
+  WiFi.forceSleepWake();
+  delay( 1 );
+
+  // Bring up the WiFi connection
+  WiFi.mode( WIFI_STA );
   WiFi.begin(wifi_ssid, wifi_password);
 
   while (WiFi.status() != WL_CONNECTED) {
