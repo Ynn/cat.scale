@@ -122,6 +122,10 @@ void setup() {
   // Serial.begin(MONITOR_SPEED);
   // Serial.print("Starting: ");
 
+  WiFi.mode( WIFI_OFF );
+  WiFi.forceSleepBegin();
+  delay( 1 );
+
   long mesure = mesure();
   if(mesure > -1){
     sendAndSleep(mesure);
