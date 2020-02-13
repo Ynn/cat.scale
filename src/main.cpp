@@ -64,7 +64,7 @@ void reconnect() {
       // Serial.print("KO, error : ");
       // Serial.print(client.state());
       // Serial.println(" wait 5s...");
-      delay(5000);
+      delay(500);
     }
   }
 }
