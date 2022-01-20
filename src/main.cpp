@@ -15,12 +15,12 @@ struct {
 } rtcData;
 
 
-#define wifi_ssid "SUSAN_nomap"
-#define wifi_password "celui qui ne pense pas a moi est un egoiste"
+#define wifi_ssid ""
+#define wifi_password ""
 
-#define mqtt_server "54.154.107.222"
-#define mqtt_user "oipayvjr"  
-#define mqtt_password "57zb4p0F7R7n"
+#define mqtt_server ""
+#define mqtt_user ""  
+#define mqtt_password ""
 #define mqtt_port 16798
 #define cat_topic "cat/bowl"
 
